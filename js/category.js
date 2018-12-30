@@ -26,8 +26,12 @@ window.addEventListener('load', function () {
     var liHeight = lis[0].offsetHeight;
     // console.log(liHeight);
     // 获取父元素swiper-container
+
+    //
+    var wrapper=document.querySelector('.swiper-wrapper');
+
     var container=document.querySelector('.swiper-container');
-    var slide=this.document.querySelector('.swiper-slide');
+    var slide=document.querySelector('.swiper-slide');
     var distance=container.offsetHeight-slide.offsetHeight
 
 
@@ -40,11 +44,17 @@ window.addEventListener('load', function () {
             if(distance>translateY){
                 translateY=distance
             }
-            slide.style.transform="translateY("+translateY+"px)"
+            wrapper.style.transition="all .2s";
+            wrapper.style.transform="translateY("+translateY+"px)";
+            for(var j =0;j<lis.length;j++){
+                lis[j].classList.remove("active");
+            }
+            this.classList.add("active");
 
         })
         
     }
+
 
 
 
