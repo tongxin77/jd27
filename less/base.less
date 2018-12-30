@@ -1,0 +1,214 @@
+// body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{
+//     margin:0;
+//     padding:0;
+//     box-sizing: border-box;
+// }
+// a {
+//   text-decoration: none;
+// }
+// ul,ol {
+//   margin: 0;
+//   padding: 0;
+//   list-style: none;
+// }
+// /* 移动端图片边框   相当于  border:0 */
+// img {vertical-align: top;}
+// /* -webkit-tap-highlight-color:rgba(0,0,0,0);//透明度设置为0，去掉点击链接和文本框对象时默认的灰色半透明覆盖层(iOS)或者虚框(Android)  */
+// a,
+// input,
+// button {
+//   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+// }
+// /* 取消chrome下默认的文本框聚焦样式 */
+// input,textarea{outline:none} 
+ 
+// /* 去掉IOS移除原生控件样式 */
+// /* -webkit-appearance: none; */
+// /* 消除输入框和按钮的原生外观，在iOS上加上这个属性才能给按钮和输入框自定义样式  */
+// input,
+// button {
+//   -webkit-appearance: none;
+//   border-radius: 0;
+// }
+ 
+// /* -webkit-touch-callout:none;  */
+// /* 禁用长按页面时的弹出菜单 */
+ 
+// /* -webkit-user-select: none; */
+//  /* 禁止页面文字选择 ，此属性不继承，一般加在body上规定整个body的文字都不会自动调整 */
+//  /* 禁止移动端用户进行复制.选择. */
+// body {
+//   margin: 0;
+//   -webkit-user-select: none;
+//   -webkit-touch-callout:none;
+// }
+ 
+ 
+// body * {
+//   -webkit-user-select: none;
+//   font-family: Helvetica;
+// }
+ 
+// body {
+//   -webkit-text-size-adjust: 100%;
+// }
+// /* 移动端横竖屏字体乎大乎小 */
+ 
+// /* -webkit-text-size-adjust: none;  */
+// /* 禁止文字自动调整大小(默认情况下旋转设备的时候文字大小会发生变化)，此属性也不继承，一般加在body上规定整个body的文字都不会自动调整  */
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  /* 在移动端给所有元素设置box-sizing:border-box; 让盒模型计算方式固定为 设置的宽高 不会被padding或者border影响 */
+  box-sizing: border-box;
+  /* 在移动端去除一些按住高亮的背景色 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* 禁止页面文字选择 ，此属性不继承，一般加在body上规定整个body的文字都不会自动调整 */
+  -webkit-user-select: none;
+  /* 禁止文字自动调整大小(默认情况下旋转设备的时候文字大小会发生变化)，此属性也不继承，一般加在body上规定整个body的文字都不会自动调整  */
+  -webkit-text-size-adjust: 100%;
+}
+
+
+body {
+  font-size: 1.4rem;
+  font-family: '微软雅黑';
+}
+
+
+a {
+  text-decoration: none;
+  color: #666;
+}
+
+
+li {
+  list-style: none;
+}
+
+
+input {
+  /* input内外边框都去掉 */
+  border: 0;
+  outline: 0;
+  &::-webkit-input-placeholder { /* WebKit browsers */
+    color: #999;
+    font-size: 1.2rem;
+  }
+}
+
+
+img {
+  /* 设置图标标签对齐方式 中线对齐 解决图片距离块级元素3px间距 */
+  vertical-align: middle;
+}
+
+
+input,
+button {
+  /* 消除输入框和按钮的原生外观，在iOS上加上这个属性才能给按钮和输入框自定义样式  */
+  -webkit-appearance: none;
+  /* 去掉IOS移除原生控件样式 */
+  -webkit-touch-callout: none;
+}
+
+
+#header {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  left: 0;
+  width: 100%;
+  display: flex; // padding: 10px;
+  [class^="icon-"]{
+    background-image: url('../images/sprites.png');
+    background-size: 20rem 20rem;
+    background-clip: content-box;
+    background-origin: content-box;
+  }
+  .icon-back{
+    background-position: -2rem 0;
+    width: 4rem;
+    height: 4.5rem;
+    display: block;
+    padding: 1.25rem 1rem;
+  }
+  .icon-menu{
+    background-position:-6rem 0;
+    width: 4rem;
+    height: 4.5rem;
+    display: block;
+    padding: 1.25rem 1rem;
+  }
+  .icon-logo {
+      display: block;
+      width: 8rem;
+      height: 4.5rem;
+      // 在less中 因为会把 / 转成除号 所以需要把它转义一下 把需要转义的内容写在~“ ”中 但是img的路径也变了
+      // background:  ~"url('./images/sprites.png') 0 -11rem / 20rem 20rem content-box content-box";
+      
+      background-position: 0 -11rem;
+      
+      padding: 1rem 1.1rem;
+  }
+  form {
+      flex: 1;
+      position: relative;
+      .icon-search {
+          position: absolute;
+          width: 4.2rem;
+          height: 4rem;
+          top:1.1rem;
+          left: 0.5rem;
+          font-size: 1.2rem;
+          // background-image: url('../images/sprites.png');
+          background-position: -5.6rem -11rem;
+          // background-size: 20rem 20rem;
+          // background-clip: content-box;
+          // background-origin: content-box;
+          // background: url('../images/sprites.png') -5.6rem -11rem ~"/ "20rem 20rem content-box content-box;
+      }
+      input {
+          width: 100%;
+          height: 3rem;
+          border-radius: 1.5rem;
+          margin-top: 0.7rem;
+          padding-left: 3.1rem;
+          font-size: 1.2rem;
+      }
+  }
+  .icon-login {
+      display: block;
+      width: 5rem;
+      height: 4.5rem;
+      line-height: 4.5rem;
+      text-align: center;
+      color: #fff;
+  }
+}
+
+
+#footer{
+  height: 5rem;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  ul{
+      display: flex;
+      li{
+
+          width: 25%; 
+          text-align: center;
+          img{
+              width: 6.5rem;
+              height: 5rem;
+          }     
+      }
+  }
+
+}

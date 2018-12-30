@@ -1,0 +1,360 @@
+// 把基本样式导入
+@import 'base.less';
+#header {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    left: 0;
+    width: 100%;
+    display: flex; // padding: 10px;
+    .logo {
+        display: block;
+        width: 8rem;
+        height: 4.5rem;
+        // 在less中 因为会把 / 转成除号 所以需要把它转义一下 把需要转义的内容写在~“ ”中 但是img的路径也变了
+        background:  ~"url('./images/sprites.png') 0 -11rem / 20rem 20rem content-box content-box";
+      
+        // background-position: 0 -11rem;
+        // background-size: 20rem 20rem;
+        // background-clip: content-box;
+        // background-origin: content-box;
+        padding: 1rem 1.1rem;
+    }
+    form {
+        flex: 1;
+        position: relative;
+        .search {
+            position: absolute;
+            width: 4.2rem;
+            height: 4rem;
+            top:1.1rem;
+            left: 0.5rem;
+            font-size: 1.2rem;
+            // background-image: url('../images/sprites.png');
+            // background-position: -5.6rem -11rem;
+            // background-size: 20rem 20rem;
+            // background-clip: content-box;
+            // background-origin: content-box;
+            background: url('../images/sprites.png') -5.6rem -11rem ~"/ "20rem 20rem content-box content-box;
+        }
+        input {
+            width: 100%;
+            height: 3rem;
+            border-radius: 1.5rem;
+            margin-top: 0.7rem;
+            padding-left: 3.1rem;
+        }
+    }
+    .login {
+        display: block;
+        width: 5rem;
+        height: 4.5rem;
+        line-height: 4.5rem;
+        text-align: center;
+        color: #fff;
+    }
+}
+
+// 轮播图
+#slide{
+    width: 100%;
+    img{
+        width: 100%;
+    }
+}
+
+// 导航栏区域、
+
+#nav{
+    padding: 1rem;
+    ul{
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        li{
+            width: 25%;
+            a{
+                display: block;
+                text-align: center;
+                img{
+                    width: 4rem;
+                    height: 4rem;
+                }
+                p{
+                    margin: 1rem;
+                }
+            }
+        }
+    }
+}
+
+
+// 主体栏的开始
+#main{
+    width: 100vw;
+    padding: 1rem;
+    background-color: #eee;
+    .seckill{
+        margin-top: 10px;
+        background-color: #fff;
+        box-shadow:#ccc 0 0 2px;
+        .kill-body{
+            height: 3rem;
+            line-height: 3rem;
+            img{
+                width: 2rem;
+                height: 2.5rem;
+                margin-left: 0.5rem;
+            }
+            .hand{
+                color: #de181b;
+                margin-left: 0.5rem;
+            }
+            .time{
+                span{
+                    display: inline-block;
+                    background-color: #000;
+                    // margin-left: 0.1rem;
+                    color: #fff;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    margin-top: 0.8rem;
+                    line-height: 1.5rem;
+                    text-align: center;
+                    font-size: 1.4rem;
+                    &.point{
+                        width: 0.4rem;
+                        background-color: #fff;
+                        color: #000;
+                    }
+                }
+                
+
+            }
+            .skill-more{
+                margin-right: 1rem;
+                float: right;
+            }
+        }
+        .kill-content{
+            padding: 1rem 0;
+            ul{
+                display: flex;
+                li{
+                    flex:1;
+                    text-align: center;
+                    a{
+                        display: inline-block;
+                        img{
+                            // width: 11rem;
+                            width: 100%;
+                        }
+                        p{
+                            font-size: 1.2rem;
+                            &.price{
+                                color: #de181b;
+                            }
+                        }
+                    }
+                    &~li{
+                        border-left: 1px solid #ccc;
+                    }
+                }
+            }
+        }
+    }
+    .market1{
+        box-shadow:#ccc 0 0 2px;
+        margin-top: 1rem;
+        background-color: #fff;
+        .market1-body{
+            height: 3rem;
+            line-height: 3rem;
+            padding-left: 1rem;
+            h4{
+                margin-left: 0.8rem;
+                position: relative;
+                &::before{
+                    content: "";
+                    display: inline-block;
+                    width: 0.4rem;
+                    height: 1.8rem;
+                    background-color: #de181b;
+                    position: absolute;
+                    top:0.7rem;
+                    left: -1rem;
+
+                }
+            }
+        }
+        .market1-content{  
+            display: flex;   
+            border-top: 1px solid #ccc;     
+            .content-left{
+                border-right: 1px solid #ccc;
+                width: 50%;
+                a{
+                    display: block;
+                    width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                    &.shoes{
+                        border-top:  3px solid #fff;
+                    }
+                }
+            }
+            .content-right{
+                width: 50%;
+                flex-direction: column;
+                display: flex;
+                a{
+                    display: block;
+                   width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                   
+                }
+              
+            }
+        }
+    }
+    .market2{
+        box-shadow:#ccc 0 0 2px;
+        margin-top: 1rem;
+        background-color: #fff;
+        .market1-body{
+            height: 3rem;
+            line-height: 3rem;
+            padding-left: 1rem;
+            h4{
+                margin-left: 0.8rem;
+                position: relative;
+                &::before{
+                    content: "";
+                    display: inline-block;
+                    width: 0.4rem;
+                    height: 1.8rem;
+                    background-color: #de181b;
+                    position: absolute;
+                    top:0.7rem;
+                    left: -1rem;
+
+                }
+            }
+        }
+        .market1-content{  
+            display: flex;   
+            border-top: 1px solid #ccc;     
+            .content-left{
+                border-right: 1px solid #ccc;
+                width: 50%;
+                a{
+                    display: block;
+                    width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+            .content-right{
+                width: 50%;
+                flex-direction: column;
+                display: flex;
+                a{
+                    display: block;
+                   width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                    &.tuangou{
+                        border-top:  1px solid #ccc;
+                    }
+                }
+              
+            }
+        }
+    }
+    .market3{
+        box-shadow:#ccc 0 0 2px;
+        margin-top: 1rem;
+        margin-bottom: 5rem;
+        background-color: #fff;
+        .market1-body{
+            height: 3rem;
+            line-height: 3rem;
+            padding-left: 1rem;
+            h4{
+                margin-left: 0.8rem;
+                position: relative;
+                &::before{
+                    content: "";
+                    display: inline-block;
+                    width: 0.4rem;
+                    height: 1.8rem;
+                    background-color: #de181b;
+                    position: absolute;
+                    top:0.7rem;
+                    left: -1rem;
+
+                }
+            }
+        }
+        .market1-content{  
+            display: flex;   
+            border-top: 1px solid #ccc;     
+            .content-left{
+                border-right: 1px solid #ccc;
+                width: 50%;
+                a{
+                    display: block;
+                    width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                    &.shoes{
+                        border-top:  3px solid #fff;
+                    }
+                }
+            }
+            .content-right{
+                width: 50%;
+                flex-direction: column;
+                display: flex;
+                a{
+                    display: block;
+                   width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                   
+                }
+              
+            }
+        }
+    }
+}
+
+#footer{
+    height: 5rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    ul{
+        display: flex;
+        li{
+
+            width: 25%; 
+            text-align: center;
+            img{
+                width: 6.5rem;
+                height: 5rem;
+            }     
+        }
+    }
+
+}
+
